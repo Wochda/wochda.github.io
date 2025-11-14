@@ -1,0 +1,240 @@
+/* GRUNDSTYLING */
+body {
+    font-family: Arial, sans-serif; /* Schriftart anpassen */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f7f7; /* Heller Hintergrund für den Körper */
+}
+
+/* LINKS */
+a {
+    color: #007bff; /* Hauptfarbe für Links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* CONTAINER FÜR INHALT */
+.content-section {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grey-bg {
+    background-color: #e9ecef; /* Leicht abgesetzter Hintergrund */
+}
+
+/* --- 1. NAVIGATIONSLEISTE (NAVBAR) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* Weißer Hintergrund wie auf der Vorlage */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 5%;
+    position: sticky; /* Bleibt beim Scrollen oben */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #3c5a75; /* Typische "Praxis-Farbe" */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    margin-left: 25px;
+}
+
+.navbar nav ul li a {
+    font-weight: bold;
+    color: #333;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar nav ul li a:hover {
+    color: #3c5a75;
+    border-bottom: 2px solid #3c5a75;
+}
+
+/* --- 2. HERO-SEKTION (STARTSEITE) --- */
+.hero-section {
+    background-image: url('placeholder-header.jpg'); /* HIER EIGENES BILD EINFÜGEN! */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    height: 60vh; /* Mindesthöhe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Dunkler Overlay, um Text lesbarer zu machen */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e55a40; /* Akzentfarbe für den Call-to-Action */
+    color: white;
+    padding: 10px 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d14933;
+}
+
+/* --- LEISTUNGEN (SERVICE-GRID) --- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 5px solid #3c5a75;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- TEAM/ÜBER MICH --- */
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    background-color: #ccc; /* Platzhalter-Hintergrund */
+    border-radius: 50%;
+    overflow: hidden;
+    /* Bild-Styling, wenn es eingefügt wird:
+    img { width: 100%; height: 100%; object-fit: cover; } */
+}
+
+.profile-text {
+    flex-grow: 1;
+}
+
+/* --- KONTAKT --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.map-placeholder {
+    background-color: #ddd;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --- 3. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #bbb;
+}
+
+/* --- TEAM/ÜBER MICH --- */
+.profile-container {
+    /* ... (vorheriger Code bleibt) */
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    background-color: #ccc; 
+    border-radius: 50%;
+    overflow: hidden; /* **Wichtig:** Schneidet alles außerhalb des Kreises ab */
+}
+
+/* NEUE REGELN FÜR DAS BILD INNERHALB DES CONTAINERS */
+.profile-image img {
+    width: 100%;       /* Macht das Bild so breit wie den Container (250px) */
+    height: 100%;      /* Macht das Bild so hoch wie den Container (250px) */
+    object-fit: cover; /* **Zentriert und Füllt** den Container, schneidet Ränder ab */
+    display: block;    /* Entfernt mögliche Abstände unter dem Bild */
+}
+
+/* --- RESPONSIVE DESIGN (MOBIL-ANSICHT) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar nav ul li {
+        margin: 5px 0;
+    }
+    
+    .profile-container, .contact-grid {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        margin: 0 auto; /* Zentriert das Bild */
+    }
+}
